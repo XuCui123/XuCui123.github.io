@@ -10,8 +10,13 @@
 
     <!--Description-->
     
-        <meta name="description" content="一. 安装RVMRVM(Ruby Version Manager),Ruby版本管理器用来升级ruby，RVM包含了Ruby的版本管理和Gem库管理(gemset)。1、  RVM安装$ curl -L get.rvm.io | bash -s stable
-2、  之后就是等待一段时间之后，就可以">
+        <meta name="description" content="一. 安装RVMRVM(Ruby Version Manager),Ruby版本管理器用来升级ruby，RVM包含了Ruby的版本管理和Gem库管理(gemset)。
+
+1、  RVM安装
+
+‘’’bash’$ curl -L get.rvm.io | bash -s stable‘’’
+
+2、  ">
     
 
     <!--Author-->
@@ -130,26 +135,64 @@
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/安装/">#安装</a>
+                            </div>
+                        </div>
+                    
 
                     <!-- Main Post Content -->
-                    <p>一. 安装RVM<br>RVM(Ruby Version Manager),Ruby版本管理器用来升级ruby，RVM包含了Ruby的版本管理和Gem库管理(gemset)。<br>1、  RVM安装<br>$ curl -L get.rvm.io | bash -s stable</p>
-<p>2、  之后就是等待一段时间之后，就可以安装成功了，使用以下命令来验证<br>$ source ~/.bashrc<br>$ source ~/.bash_profile</p>
-<p>3、 测试是否安装正常<br>$ rvm -v</p>
-<p>二. 使用RVM升级Ruby<br>1、查看当前ruby版本<br>$ ruby -v</p>
-<p>2、列出已知ruby的版本<br>$ rvm list known<br>如果出现下列问题：A RVM version 1.29.1 (latest) is installed yet 1.21.20 (stable) is loaded.<br>Please do one of the following:</p>
+                    <h3 id="一-安装RVM"><a href="#一-安装RVM" class="headerlink" title="一. 安装RVM"></a>一. 安装RVM</h3><p>RVM(Ruby Version Manager),Ruby版本管理器用来升级ruby，RVM包含了Ruby的版本管理和Gem库管理(gemset)。</p>
+<blockquote>
+<p>1、  RVM安装</p>
+</blockquote>
+<p>‘’’bash’<br>$ curl -L get.rvm.io | bash -s stable<br>‘’’</p>
+<blockquote>
+<p>2、  之后就是等待一段时间之后，就可以安装成功了，使用以下命令来验证</p>
+</blockquote>
+<p>‘’’bash’<br>$ source ~/.bashrc<br>$ source ~/.bash_profile<br>‘’’</p>
+<blockquote>
+<p>3、 测试是否安装正常</p>
+</blockquote>
+<p>‘’’bash’<br>$ rvm -v<br>‘’’</p>
+<h3 id="二-使用RVM升级Ruby"><a href="#二-使用RVM升级Ruby" class="headerlink" title="二. 使用RVM升级Ruby"></a>二. 使用RVM升级Ruby</h3><blockquote>
+<p>1、查看当前ruby版本</p>
+</blockquote>
+<p>‘’’bash’<br>$ ruby -v<br>‘’’</p>
+<blockquote>
+<p>2、列出已知ruby的版本</p>
+</blockquote>
+<p>‘’’bash’<br>$ rvm list known<br>如果出现下列问题：A RVM version 1.29.1 (latest) is installed yet 1.21.20 (stable) is loaded.<br>Please do one of the following:</p>
 <ul>
 <li>‘rvm reload’</li>
 <li>open a new shell</li>
 <li>‘echo rvm_auto_reload_flag=1 &gt;&gt; ~/.rvmrc’ # for auto reload with msg.</li>
-<li>‘echo rvm_auto_reload_flag=2 &gt;&gt; ~/.rvmrc’ # for silent auto reload.<br>执行rvm reload<br>再执行rvm list known</li>
+<li>‘echo rvm_auto_reload_flag=2 &gt;&gt; ~/.rvmrc’ # for silent auto reload.<br>执行rvm reload<br>再执行rvm list known<br>‘’’<blockquote>
+<p>3、安装ruby 2.4.0</p>
+</blockquote>
+</li>
 </ul>
-<p>3、安装ruby 2.4.0<br>$ rvm install 2.4.0</p>
-<p>4、安装完之后，可以ruby -v测试是否安装成功<br>ruby -v<br>ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]</p>
-<p>5.将该版本设置为默认的ruby版本<br>rvm use 2.4.0 –default<br>Using /Users/<strong>**</strong>/.rvm/gems/ruby-2.4.0</p>
-<p>6.ruby -v<br>ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]</p>
+<p>‘’’bash’<br>$ rvm install 2.4.0<br>‘’’</p>
+<blockquote>
+<p>4、安装完之后，可以ruby -v测试是否安装成功</p>
+</blockquote>
+<p>‘’’bash’<br>ruby -v<br>ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]<br>‘’’</p>
+<blockquote>
+<p>5.将该版本设置为默认的ruby版本</p>
+</blockquote>
+<p>‘’’bash’<br>rvm use 2.4.0 –default<br>Using /Users/<strong>**</strong>/.rvm/gems/ruby-2.4.0<br>‘’’</p>
+<blockquote>
+<p>6.ruby -v</p>
+</blockquote>
+<p>‘’’bash’<br>ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]<br>‘’’</p>
 
                     
                     <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/安装/">#安装</a>
+                        </div>
                     
 
                     <!-- Comments -->

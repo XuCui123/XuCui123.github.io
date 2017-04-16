@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+        <meta name="description" content="call方法12345语法：call([thisObj[,arg1[, arg2[,   [,.argN]]]]]) 定义：调用一个对象的一个方法，以另一个对象替换当前对象。 说明： call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 th">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="JavaScript中call的appply的区别"/>
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>Hello World - 莫名何以的博客</title>
+    <title>JavaScript中call的appply的区别 - 莫名何以的博客</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
@@ -110,8 +110,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Hello World</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2017-04-12</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">JavaScript中call的appply的区别</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2017-04-16</p>
         </div>
     </div>
 
@@ -129,20 +129,27 @@
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                            </div>
+                        </div>
+                    
 
                     <!-- Main Post Content -->
-                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+                    <h2 id="call方法"><a href="#call方法" class="headerlink" title="call方法"></a>call方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">语法：call([thisObj[,arg1[, arg2[,   [,.argN]]]]]) </div><div class="line">定义：调用一个对象的一个方法，以另一个对象替换当前对象。 </div><div class="line">说明： </div><div class="line">call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。 </div><div class="line">如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。</div></pre></td></tr></table></figure>
+<h2 id="apply方法"><a href="#apply方法" class="headerlink" title="apply方法"></a>apply方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">语法：apply([thisObj[,argArray]]) </div><div class="line">定义：应用某一对象的一个方法，用另一个对象替换当前对象。 </div><div class="line">说明： </div><div class="line">如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。 </div><div class="line">如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。</div></pre></td></tr></table></figure>
+<h2 id="不同之处"><a href="#不同之处" class="headerlink" title="不同之处"></a>不同之处</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">apply：最多只能有两个参数——新this对象和一个数组 argArray。如果给该方法传递多个参数，则把参数都写进这个数组里面，当然，即使只有一个参数，也要写进数组里面。如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。</div><div class="line">call：则是直接的参数列表，主要用在js对象各方法互相调用的时候，使当前this实例指针保持一致,或在特殊情况下需要改变this指针。如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。</div><div class="line">更简单地说，apply和call功能一样，只是传入的参数列表形式不同：如 func.call(func1,var1,var2,var3)对应的apply写法为：</div><div class="line">func.apply(func1,[var1,var2,var3])</div><div class="line">语法：foo.call(this, arg1,arg2,arg3) == foo.apply(this, arguments) == this.foo(arg1, arg2, arg3);</div><div class="line">相同点：两个方法产生的作用是完全一样的。</div><div class="line">不同点：方法传递的参数不同。</div><div class="line">JavaScript 中，某个函数的参数数量是不固定的，因此要说适用条件的话，当你的参数是明确知道数量时，用 call，而不确定的时候，用 apply，然后把参数 push 进数组传递进去。当参数数量不确定时，函数内部也可以通过 arguments 这个数组来遍历所有的参数。</div></pre></td></tr></table></figure>
+<h3 id="调用原生对象的方法"><a href="#调用原生对象的方法" class="headerlink" title="调用原生对象的方法"></a>调用原生对象的方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = &#123;0:1, 1:<span class="string">"yjc"</span>, length: 2&#125;; </div><div class="line"></div><div class="line">a.slice(); //TypeError: a.slice is not a <span class="keyword">function</span></div><div class="line"></div><div class="line">Array.prototype.slice.call(a);//[1, <span class="string">"yjc"</span>]</div><div class="line"></div><div class="line">对象a类似array，但不具备array的slice等方法。使用call绑定，这时候就可以调用slice方法。</div></pre></td></tr></table></figure>
+<h3 id="实现继承"><a href="#实现继承" class="headerlink" title="实现继承"></a>实现继承</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var Parent = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">this.name = <span class="string">"yjc"</span>;</div><div class="line">this.age = 22;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var child = &#123;&#125;;</div><div class="line"></div><div class="line">console.log(child);//Object &#123;&#125; ,空对象</div><div class="line"></div><div class="line">Parent.call(child);</div><div class="line"></div><div class="line">console.log(child); //Object &#123;name: <span class="string">"yjc"</span>, age: 22&#125;</div></pre></td></tr></table></figure>
+<h2 id="bind方法"><a href="#bind方法" class="headerlink" title="bind方法"></a>bind方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">obj.bind(thisObj, arg1, arg2, ...);</div><div class="line">把obj绑定到thisObj，这时候thisObj具备了obj的属性和方法。与call和apply不同的是，<span class="built_in">bind</span>绑定后不会立即执行。</div><div class="line"></div><div class="line">同样是add()和sub()：</div><div class="line">add.bind(sub, 5, 3); //不再返回8</div><div class="line">add.bind(sub, 5, 3)(); //8</div><div class="line">如果<span class="built_in">bind</span>的第一个参数是null或者undefined，等于将this绑定到全局对象。</div></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                        </div>
                     
 
                     <!-- Comments -->

@@ -151,13 +151,13 @@ IP - 网际协议IP 负责计算">
 <hr>
 <h2 id="SSL-安全套接字层"><a href="#SSL-安全套接字层" class="headerlink" title="SSL - 安全套接字层"></a>SSL - 安全套接字层</h2><p>SSL 协议用于为安全数据传输加密数据。</p>
 <hr>
-<h2 id="SMTP-简易邮件传输协议"><a href="#SMTP-简易邮件传输协议" class="headerlink" title="SMTP - 简易邮件传输协议"></a>SMTP - 简易邮件传输协议</h2><p>SMTP 用于电子邮件的传输。</p>
+<h2 id="SMTP-简易邮件传输协议"><a href="#SMTP-简易邮件传输协议" class="headerlink" title="SMTP - 简易邮件传输协议"></a>SMTP - 简易邮件传输协议</h2><p>SMTP 用于电子邮件的传输。<br>SMTP 协议用于传输电子邮件。SMTP 负责把邮件发送到另一台计算机。<br>通常情况下，邮件会被送到一台邮件服务器（SMTP 服务器），然后被送到另一台（或几台）服务器，然后最终被送到它的目的地。<br>SMTP 也可以传送纯文本，但是无法传输诸如图片、声音或者电影之类的二进制数据。<br>SMTP 使用 MIME 协议通过 TCP/IP 网络来发送二进制数据。MIME 协议会将二进制数据转换为纯文本。</p>
 <hr>
 <h2 id="MIME-多用途因特网邮件扩展"><a href="#MIME-多用途因特网邮件扩展" class="headerlink" title="MIME - 多用途因特网邮件扩展"></a>MIME - 多用途因特网邮件扩展</h2><p>MIME 协议使 SMTP 有能力通过 TCP/IP 网络传输多媒体文件，包括声音、视频和二进制数据。</p>
 <hr>
-<h2 id="IMAP-因特网消息访问协议"><a href="#IMAP-因特网消息访问协议" class="headerlink" title="IMAP - 因特网消息访问协议"></a>IMAP - 因特网消息访问协议</h2><p>IMAP 用于存储和取回电子邮件。</p>
+<h2 id="IMAP-因特网消息访问协议"><a href="#IMAP-因特网消息访问协议" class="headerlink" title="IMAP - 因特网消息访问协议"></a>IMAP - 因特网消息访问协议</h2><p>IMAP 用于存储和取回电子邮件。<br>与 POP 类似，IMAP 协议同样被邮件程序使用。<br>IMAP 协议与 POP 协议之间的主要差异是：如果 IMAP 连上了邮件服务器，它不会自动地将邮件下载到邮件程序之中。<br>IMAP 使你有能力在下载邮件之前先通过邮件服务器端查看他们。通过 IMAP，你可以选择下载这些邮件或者仅仅是删除它们。比方说你需要从不同的位置访问邮件服务器，但是仅仅希望回到办公室的时候再下载邮件，IMAP 在这种情况下会很有用。</p>
 <hr>
-<h2 id="POP-邮局协议"><a href="#POP-邮局协议" class="headerlink" title="POP - 邮局协议"></a>POP - 邮局协议</h2><p>POP 用于从电子邮件服务器向个人电脑下载电子邮件。</p>
+<h2 id="POP-邮局协议"><a href="#POP-邮局协议" class="headerlink" title="POP - 邮局协议"></a>POP - 邮局协议</h2><p>POP 用于从电子邮件服务器向个人电脑下载电子邮件。<br>POP 协议被邮件程序用来取回邮件服务器上面的邮件。<br>假如你的邮件程序使用 POP，那么一旦它连接上邮件服务器，你的所有的邮件都会被下载到邮件程序中（或者称之为邮件客户端）。</p>
 <hr>
 <h2 id="FTP-文件传输协议"><a href="#FTP-文件传输协议" class="headerlink" title="FTP - 文件传输协议"></a>FTP - 文件传输协议</h2><p>FTP 负责计算机之间的文件传输。</p>
 <hr>
@@ -178,6 +178,8 @@ IP - 网际协议IP 负责计算">
 <h2 id="BOOTP-Boot-Protocol"><a href="#BOOTP-Boot-Protocol" class="headerlink" title="BOOTP - Boot Protocol"></a>BOOTP - Boot Protocol</h2><p>BOOTP 用于从网络启动计算机。</p>
 <hr>
 <h2 id="PPTP-点对点隧道协议"><a href="#PPTP-点对点隧道协议" class="headerlink" title="PPTP - 点对点隧道协议"></a>PPTP - 点对点隧道协议</h2><p>PPTP 用于私人网络之间的连接（隧道）。</p>
+<hr>
+<h3 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h3><p>电子邮件程序使用不同的 TCP/IP 协议：<br>使用 SMTP 来发送邮件<br>使用 POP 从邮件服务器下载邮件<br>使用 IMAP 连接到邮件服务器</p>
 
                     
                     <!-- Tags Bottom -->

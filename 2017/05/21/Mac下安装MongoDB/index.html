@@ -13,7 +13,8 @@
         <meta name="description" content="1. 使用homebrew安装，升级brew版本库1brew update
 2. 安装mongodb1brew install mongodb
 查看安装信息1brew info mongodb
-查看mongodb的版本1mongo --version">
+查看mongodb的版本1mongo --version
+3. 运行mongodb创建一个数据库存储目录 ">
     
 
     <!--Author-->
@@ -144,6 +145,8 @@
 <h3 id="2-安装mongodb"><a href="#2-安装mongodb" class="headerlink" title="2. 安装mongodb"></a>2. 安装mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mongodb</div></pre></td></tr></table></figure>
 <p>查看安装信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew info mongodb</div></pre></td></tr></table></figure></p>
 <p>查看mongodb的版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo --version</div></pre></td></tr></table></figure></p>
+<h3 id="3-运行mongodb"><a href="#3-运行mongodb" class="headerlink" title="3. 运行mongodb"></a>3. 运行mongodb</h3><p>创建一个数据库存储目录 /data/db：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mkdir -p /data/db</div></pre></td></tr></table></figure></p>
+<p>启动 mongodb，默认数据库目录即为 /data/db：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mongod</div></pre></td></tr></table></figure></p>
 
                     
                     <!-- Tags Bottom -->

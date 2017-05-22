@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="guessinggamewindow.onload = newgame;window.onpopstate = popState;var state, ui;function newgame(playagain) {ui = {heading: null,#  at the top of the d">
+        <meta name="description" content="SQL server建立连接时出现与网络相关的或特定于实例的错误
+解决方法1.在运行里输入：services.msc2.启动SQL Server再打开SQL Server，即可连接成功。">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="guessinggame"/>
+        <meta property="og:title" content="SQL server建立连接时出现与网络相关的或特定于实例的错误"/>
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>guessinggame - 莫名何以的博客</title>
+    <title>SQL server建立连接时出现与网络相关的或特定于实例的错误 - 莫名何以的博客</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
@@ -110,8 +111,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">guessinggame</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2017-04-29</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">SQL server建立连接时出现与网络相关的或特定于实例的错误</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2017-05-22</p>
         </div>
     </div>
 
@@ -131,19 +132,20 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/tinygame/">#tinygame</a>
+                                <a class="fw3 ph1 dib" href="/tags/问题解决/">#问题解决</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <html><head><title>guessinggame</title><br><script><br>window.onload = newgame;<br>window.onpopstate = popState;<br>var state, ui;<br><br>function newgame(playagain) {<br>ui = {<br>heading: null,<br><br>#  at the top of the document.<br>prompt: null,<br>input: null,<br>low: null,<br>mid: null,<br>high: null<br>};<br>for(var id in ui) ui[id] = document.getElementById(id);<br><br>ui.input.onchange = handleGuess;<br><br>state = {<br>n: Math.floor(99 <em> Math.random()) + 1,<br>low: 0,<br>high: 100,<br>guessnum: 0,<br>guess: undefined<br>};<br><br>display(state);<br>if (playagain === true) save(state);<br>}<br><br>function save(state) {<br>if (!history.pushState) return;<br><br>var url = “#guess” + state.guessnum;<br>history.pushState(state,<br>“”,<br>url);<br>}<br><br>function popState(event) {<br>if (event.state) {<br>state = event.state;<br>display(state);<br>}<br>else {<br>history.replaceState(state, “”, “#guess” + state.guessnum);<br>}<br>};<br><br>function handleGuess() {<br>var g = parseInt(this.value);<br>if ((g &gt; state.low) &amp;&amp; (g &lt; state.high)) {<br>if (g &lt; state.n) state.low = g;<br>else if (g &gt; state.n) state.high = g;<br>state.guess = g;<br>state.guessnum++;<br>save(state);<br>display(state);<br>}<br>else {<br>alert(“Please enter a number greater than “ + state.low +<br>“ and less than “ + state.high);<br>}<br>}<br><br>function display(state) {<br>ui.heading.innerHTML = document.title =<br>“I’m thinking of a number between “ +<br>state.low + “ and “ + state.high + “.”;<br><br>ui.low.style.width = state.low + “%”;<br>ui.mid.style.width = (state.high-state.low) + “%”;<br>ui.high.style.width = (100-state.high) + “%”;<br><br>ui.input.style.visibility = “visible”;<br>ui.input.value = “”;<br>ui.input.focus();<br><br>if (state.guess === undefined)<br>ui.prompt.innerHTML = “Type your guess and hit Enter: “;<br>else if (state.guess &lt; state.n)<br>ui.prompt.innerHTML = state.guess + “ is too low. Guess again: “;<br>else if (state.guess &gt; state.n)<br>ui.prompt.innerHTML = state.guess + “ is too high. Guess again: “;<br>else {<br>ui.input.style.visibility = “hidden”;  // No more guesses now<br>ui.heading.innerHTML = document.title = state.guess + “ is correct! “;<br>ui.prompt.innerHTML =<br>“<br><br>Congratulations!<br><button onclick='newgame(true)'>Play Again</button>“;<br>}<br>}<br></script><br><style>  /</em> CSS styles to make the game look good */<br>#prompt { font-size: 16pt; }<br>table { width: 90%; margin:10px; margin-left:5%; }<br>#low, #high { background-color: lightgray; height: 1em; }<br>#mid { background-color: green; }<br>p {<br>text-align: center;<br>font-size: 50px;<br>text-shadow: 1px 1px 3px white, 2px 3px 6px magenta, 4px 5px 9px white, 6px 7px 12px magenta;<br>color: magenta;<br>}<br></style><br></head><br><body><br><h1 id="heading">I’m thinking of a number…<br><table><tr><td id="low"></td><td id="mid"></td><td id="high"></td></tr></table><br><label id="prompt"></label><input id="input" type="text"><br></h1></body></html>
+                    <h2 id="SQL-server建立连接时出现与网络相关的或特定于实例的错误"><a href="#SQL-server建立连接时出现与网络相关的或特定于实例的错误" class="headerlink" title="SQL server建立连接时出现与网络相关的或特定于实例的错误"></a>SQL server建立连接时出现与网络相关的或特定于实例的错误</h2><p><img src="1.png" alt="Alt text"></p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>1.在运行里输入：services.msc<br><img src="2.png" alt="Alt text"><br>2.启动SQL Server<br><img src="3.png" alt="Alt text"><br>再打开SQL Server，即可连接成功。</p>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/tinygame/">#tinygame</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/问题解决/">#问题解决</a>
                         </div>
                     
 

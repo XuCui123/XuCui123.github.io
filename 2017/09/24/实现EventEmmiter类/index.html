@@ -10,13 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="一. 安装RVMRVM(Ruby Version Manager),Ruby版本管理器用来升级ruby，RVM包含了Ruby的版本管理和Gem库管理(gemset)。
-
-1、  RVM安装
-
-1$ curl -L get.rvm.io | bash -s stable
-
-2、  之后就是等待一段时间">
+        <meta name="description" content="实现一个EventEmitter类，包含四个方法：on（监听事件，该事件可以被触发多次）once（监听事件，只能被触发一次）emit（触发指定事件）off（移除指定事件的某个回调方法或者所有回调方法）12345678910111213141516171819202122232425262728293">
     
 
     <!--Author-->
@@ -26,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Ruby版本升级（Mac）版"/>
+        <meta property="og:title" content="实现EventEmitter类"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>Ruby版本升级（Mac）版 - 莫名何以的博客</title>
+    <title>实现EventEmitter类 - 莫名何以的博客</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
@@ -116,8 +110,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Ruby版本升级（Mac）版</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2017-04-05</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">实现EventEmitter类</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2017-09-24</p>
         </div>
     </div>
 
@@ -137,55 +131,19 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/安装/">#安装</a>
+                                <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <h3 id="一-安装RVM"><a href="#一-安装RVM" class="headerlink" title="一. 安装RVM"></a>一. 安装RVM</h3><p>RVM(Ruby Version Manager),Ruby版本管理器用来升级ruby，RVM包含了Ruby的版本管理和Gem库管理(gemset)。</p>
-<blockquote>
-<p>1、  RVM安装</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -L get.rvm.io | bash <span class="_">-s</span> stable</div></pre></td></tr></table></figure>
-<blockquote>
-<p>2、  之后就是等待一段时间之后，就可以安装成功了，使用以下命令来验证</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">source</span> ~/.bashrc</div><div class="line">$ <span class="built_in">source</span> ~/.bash_profile</div></pre></td></tr></table></figure>
-<blockquote>
-<p>3、 测试是否安装正常</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rvm -v</div></pre></td></tr></table></figure>
-<h3 id="二-使用RVM升级Ruby"><a href="#二-使用RVM升级Ruby" class="headerlink" title="二. 使用RVM升级Ruby"></a>二. 使用RVM升级Ruby</h3><blockquote>
-<p>1、查看当前ruby版本</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ruby -v</div></pre></td></tr></table></figure>
-<blockquote>
-<p>2、列出已知ruby的版本</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ rvm list known</div><div class="line">如果出现下列问题：A RVM version 1.29.1 (latest) is installed yet 1.21.20 (stable) is loaded.</div><div class="line">Please <span class="keyword">do</span> one of the following:</div><div class="line"> <span class="string">'rvm reload'</span></div><div class="line"> open a new shell</div><div class="line"> <span class="string">'echo rvm_auto_reload_flag=1 &gt;&gt; ~/.rvmrc'</span> <span class="comment"># for auto reload with msg.</span></div><div class="line"> <span class="string">'echo rvm_auto_reload_flag=2 &gt;&gt; ~/.rvmrc'</span> <span class="comment"># for silent auto reload.</span></div><div class="line">执行rvm reload</div><div class="line">再执行rvm list known</div></pre></td></tr></table></figure>
-<blockquote>
-<p>3、安装ruby 2.4.0</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rvm install 2.4.0</div></pre></td></tr></table></figure>
-<blockquote>
-<p>4、安装完之后，可以ruby -v测试是否安装成功</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby -v</div><div class="line">ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]</div></pre></td></tr></table></figure>
-<blockquote>
-<p>5.将该版本设置为默认的ruby版本</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rvm use 2.4.0 --default</div><div class="line">Using /Users/******/.rvm/gems/ruby-2.4.0</div></pre></td></tr></table></figure>
-<blockquote>
-<p>6.查看版本号</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby -v</div><div class="line">ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]</div></pre></td></tr></table></figure>
+                    <p>实现一个EventEmitter类，包含四个方法：<br>on（监听事件，该事件可以被触发多次）<br>once（监听事件，只能被触发一次）<br>emit（触发指定事件）<br>off（移除指定事件的某个回调方法或者所有回调方法）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">class EventEmitter &#123;</div><div class="line">on(event, fn) &#123;</div><div class="line">this._callbacks = this._callbacks || &#123;&#125;;</div><div class="line">(this._callbacks[&apos;$&apos; + event] = this._callbacks[&apos;$&apos; + event] || []).push(fn);</div><div class="line">return this;</div><div class="line">&#125;</div><div class="line">once(event, fn) &#123;</div><div class="line">function on() &#123;</div><div class="line">this.off(event, on);</div><div class="line">fn.apply(this, arguments);</div><div class="line">&#125;</div><div class="line">on.fn = fn;</div><div class="line">this.on(event, on);</div><div class="line">return this;</div><div class="line">&#125;</div><div class="line">off(event, fn) &#123;</div><div class="line">this._callbacks = this._callbacks || &#123;&#125;;</div><div class="line">if (0 == arguments.length) &#123;</div><div class="line">this._callbacks = &#123;&#125;;</div><div class="line">return this;</div><div class="line">&#125;</div><div class="line">var callbacks = this._callbacks[&apos;$&apos; + event];</div><div class="line">if (!callbacks) return this;</div><div class="line">if (1 == arguments.length) &#123;</div><div class="line">delete this._callbacks[&apos;$&apos; + event];</div><div class="line">return this;</div><div class="line">&#125;</div><div class="line">var cb;</div><div class="line">for (var i = 0; i &lt; callbacks.length; i++) &#123;</div><div class="line">cb = callbacks[i];</div><div class="line">if (cb === fn || cb.fn === fn) &#123;</div><div class="line">callbacks.splice(i, 1);</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">return this;</div><div class="line">&#125;</div><div class="line">emit(event) &#123;</div><div class="line">this._callbacks = this._callbacks || &#123;&#125;;</div><div class="line">var args = [].slice.call(arguments, 1),</div><div class="line">callbacks = this._callbacks[&apos;$&apos; + event];</div><div class="line">if (callbacks) &#123;</div><div class="line">callbacks = callbacks.slice(0);</div><div class="line">for (var i = 0, len = callbacks.length; i &lt; len; ++i) &#123;</div><div class="line">callbacks[i].apply(this, args);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">return this;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/安装/">#安装</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
                         </div>
                     
 

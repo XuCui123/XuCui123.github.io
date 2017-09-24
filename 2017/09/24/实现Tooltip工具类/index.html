@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="实现Tooltip工具类，考虑出现大量实例化时的优化。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="XuCui123">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="实现Tooltip工具类"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="莫名何以的博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>实现Tooltip工具类 - 莫名何以的博客</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="莫名何以的博客">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="莫名何以的博客">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">实现Tooltip工具类</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2017-09-24</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <p>实现Tooltip工具类，考虑出现大量实例化时的优化。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div></pre></td><td class="code"><pre><div class="line">var $ = document.querySelector;</div><div class="line">var _options = &#123;</div><div class="line">id: &quot;tooltip&quot;,</div><div class="line">offset: 15</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var _list = [];</div><div class="line">var _temp = null;</div><div class="line"></div><div class="line">function _bind(reset) &#123;</div><div class="line">if (reset) &#123;</div><div class="line">_temp = _list.concat();</div><div class="line">_list = [];</div><div class="line">&#125;</div><div class="line"></div><div class="line">Array.prototype.forEach.call(document.querySelectorAll(&quot;[data-tooltip]&quot;), function(elm, idx) &#123;</div><div class="line">var text = elm.getAttribute(&quot;title&quot;).trim();</div><div class="line">var options;</div><div class="line"></div><div class="line">if (reset &amp;&amp; _temp.length &amp;&amp; _temp[idx] &amp;&amp; _temp[idx].text) &#123;</div><div class="line">if (text.length === 0) &#123;</div><div class="line">elm.setAttribute(&quot;title&quot;, _temp[idx].text);</div><div class="line">text = _temp[idx].text;</div><div class="line">&#125;</div><div class="line"></div><div class="line">elm.removeEventListener(&quot;mousemove&quot;, _onMove);</div><div class="line">elm.removeEventListener(&quot;mouseout&quot;, _onOut);</div><div class="line">elm.removeEventListener(&quot;mouseover&quot;, _onOver);</div><div class="line">&#125;</div><div class="line"></div><div class="line">if (text) &#123;</div><div class="line">elm.setAttribute(&quot;title&quot;, &quot;&quot;);</div><div class="line">elm.setAttribute(&quot;data-tooltip-id&quot;, idx);</div><div class="line">options = _parse(elm.getAttribute(&quot;data-tooltip&quot;));</div><div class="line"></div><div class="line">_list[idx] = &#123;</div><div class="line">text: text,</div><div class="line">options: options</div><div class="line">&#125;;</div><div class="line"></div><div class="line">elm.addEventListener(&quot;mousemove&quot;, _onMove);</div><div class="line">elm.addEventListener(&quot;mouseout&quot;, _onOut);</div><div class="line">elm.addEventListener(&quot;mouseover&quot;, _onOver);</div><div class="line">&#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">if (reset) &#123;</div><div class="line">_temp = null;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function _createTooltip(text, id) &#123;</div><div class="line">var elm = document.createElement(&quot;div&quot;);</div><div class="line">var text = document.createTextNode(text);</div><div class="line">var options = id &amp;&amp; _list[id] &amp;&amp; _list[id].options;</div><div class="line"></div><div class="line">if (options &amp;&amp; options[&quot;class&quot;]) &#123;</div><div class="line">elm.setAttribute(&quot;class&quot;, options[&quot;class&quot;]);</div><div class="line">&#125;</div><div class="line"></div><div class="line">elm.setAttribute(&quot;id&quot;, _options.id);</div><div class="line">elm.appendChild(text);</div><div class="line"></div><div class="line">$(&quot;body&quot;).appendChild(elm);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function _getElm() &#123;</div><div class="line">return $(&quot;#&quot; + _options.id);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function _onMove(evt) &#123;</div><div class="line">var id = this.getAttribute(&quot;data-tooltip-id&quot;);</div><div class="line">var elm = _getElm();</div><div class="line">var options = id &amp;&amp; _list[id] &amp;&amp; _list[id].options;</div><div class="line">var offset = options &amp;&amp; options.offset || _options.offset;</div><div class="line">var scrollY = window.scrollY || window.pageYOffset;</div><div class="line">var scrollX = window.scrollX || window.pageXOffset;</div><div class="line">var top = evt.pageY + offset;</div><div class="line">var left = evt.pageX + offset;</div><div class="line"></div><div class="line">if (elm) &#123;</div><div class="line">top = (top - scrollY + elm.offsetHeight + 20 &gt;= window.innerHeight ? (top - elm.offsetHeight - 20) : top);</div><div class="line">left = (left - scrollX + elm.offsetWidth + 20 &gt;= window.innerWidth ? (left - elm.offsetWidth - 20) : left);</div><div class="line"></div><div class="line">elm.style.top = top + &quot;px&quot;;</div><div class="line">elm.style.left = left + &quot;px&quot;;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function _onOut(evt) &#123;</div><div class="line">var elm = _getElm();</div><div class="line"></div><div class="line">if (elm) &#123;</div><div class="line">$(&quot;body&quot;).removeChild(elm);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function _onOver(evt) &#123;</div><div class="line">var id = this.getAttribute(&quot;data-tooltip-id&quot;);</div><div class="line">var text = id &amp;&amp; _list[id] &amp;&amp; _list[id].text;</div><div class="line"></div><div class="line">if (text) &#123;</div><div class="line">_createTooltip(text, id);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function _parse(options) &#123;</div><div class="line">var obj;</div><div class="line"></div><div class="line">if (options.length) &#123;</div><div class="line">try &#123;</div><div class="line">obj = JSON.parse(options.replace(/&apos;/ig, &quot;\&quot;&quot;));</div><div class="line">&#125; catch (err) &#123;</div><div class="line">console.log(err);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">return obj;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function _init() &#123;</div><div class="line">window.addEventListener(&quot;load&quot;, _bind);</div><div class="line">&#125;</div><div class="line"></div><div class="line">_init();</div></pre></td></tr></table></figure></p>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="https://avatars2.githubusercontent.com/u/25976974?v=3&u=3c9e1750e772a18b9696c0fd1afa1da0a1bc361d&s=400" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="XuCui123">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            <b>莫名何以</b><br>岁月的溪边，捡拾起曾经的落叶，那些过往的画面，随风飘散，徒留一声叹。。。
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2017/09/24/实现Tooltip工具类/">实现Tooltip工具类</a>
+        </p>
+    
+        <p>
+            <a href="/2017/09/24/实现EventEmmiter类/">实现EventEmitter类</a>
+        </p>
+    
+        <p>
+            <a href="/2017/09/20/读《后来时间都与你有关》/">读《后来时间都与你有关》</a>
+        </p>
+    
+        <p>
+            <a href="/2017/05/22/建立连接时出现与网络相关的或特定于实例的错误/">SQL server建立连接时出现与网络相关的或特定于实例的错误</a>
+        </p>
+    
+        <p>
+            <a href="/2017/05/21/Mac下安装MongoDB/">Mac下安装MongoDB</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
